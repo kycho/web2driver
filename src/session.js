@@ -143,7 +143,7 @@ const ALIAS_CMDS = {
 // here we walk through the protocol specification from the webdriver package
 // and simply put all the methods on Session (except for element methods and
 // edge cases)
-
+// kycho 2019.10.31 분석 : 몇몇의 기본명령및 ELEMENT연관 명령어는 자체 처리하고 세션연결이 반드시 필요한 명령어는 호출되도록 함.
 for (const proto of [WebDriverProtocol, JsonWProtocol, MJsonWProtocol, AppiumProtocol]) {
   for (const [route, methods] of toPairs(proto)) {
     for (const [method, cmdData] of toPairs(methods)) {
