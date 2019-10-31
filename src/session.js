@@ -161,7 +161,7 @@ for (const proto of [WebDriverProtocol, JsonWProtocol, MJsonWProtocol, AppiumPro
       const cmdName = keys(ALIAS_CMDS).includes(cmdData.command) ?
                       ALIAS_CMDS[cmdData.command] :
                       cmdData.command;
-
+ // kycho 2019.10.31 분석 :세션이 필요한 명령어.
       Session.prototype[cmdName] = async function (...args) {
         return await this.client[cmdData.command](...args);
       }
