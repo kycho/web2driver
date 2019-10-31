@@ -60,7 +60,8 @@ const ELEMENT_CMDS = {
   elementSubmit: "submit",
   elementClear: "clear",
   elementSendKeys: "sendKeys",
-  takeElementScreenshot: "takeScreenshot",
+   // kycho 2019.10.31 수정 : 엘리먼트가 아닌 세션명령어를 사용하기 위해서 엘리먼트명령어에서는 제외 해야 session.js에서 필터링 안됨.
+  //takeElementScreenshot: "takeScreenshot",
 };
 
 for (const [protoCmd, newCmd] of toPairs(ELEMENT_CMDS)) {
